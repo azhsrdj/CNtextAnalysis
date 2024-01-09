@@ -1,14 +1,27 @@
-# CNtextAnalysis
-对中文txt文本进行关键词词频统计
+# DataMerge
+县域 企业 行业 数据匹配和合并
 
 ## 前言
 
-本文旨在对之前写的为分析上市公司年报关键词词频统计的代码进行记录。
+用一个案例代码，来展示这个这个合并怎么完成
 
 ## 需求描述
 
+有如下三个表格
+
+表1包含了县名CountryName、行政编码CountryCode、行业分类F1-F6。设置行业分类的目的是通过县域与部分企业建立了关联，而这些企业又分属不同的行业，我的最终需求是获得一份县与企业关联，以及县通过企业与县发生关联的数据。
+
+表2包含了所有企业的名称以及所属的行业，其中CompanyName代表企业名称，CompanyCode代表企业代码，一般为6位数，行业分类F1-F6同上。
+
+表X1_old是一份试例数据，其格式与CNtextAnalysis处理后生成的文本结果基本一致，文件名“表X1_old” 表示这是企业X1的县域关联数据表。CountryName同表1，表示县名，Treat表示与县关联，数字从1到N不等。
+
+我的需求是将表2和表X1_old的数据合入表1，最后通过遍历所有企业数据，将X1～Xn的所有企业合入表1
+
+
+
 ## 设计思路
-![](https://github.com/azhsrdj/CNtextAnalysis/blob/main/%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90%E4%BB%A3%E7%A0%81%E6%B5%81%E7%A8%8B%E5%9B%BE.drawio.png)
+
+
 
 ## 文件准备
 
@@ -47,5 +60,4 @@ stopword_file = '/Users/wcz/Downloads/word2evc/TxTAlysis/cn_stopwords.txt'
 ```
 
 记录了停用词目录
-Test
 
