@@ -22,7 +22,7 @@ import pandas as pd
 
 def count_keyword_in_lines(lines, keywords):
     keyword_count = {keyword: 0 for keyword in keywords}
-    del keyword_count[""]
+    # del keyword_count[""]
     for words in lines:
         for word in words:
             if word in keyword_count:
@@ -47,7 +47,7 @@ def process_file(file_path, stopword_list):
 
 #添加字典
 def add_dict():
-    f=open("/Users/wcz/Downloads/word2evc/TxTAlysis/ciku.txt","r+",encoding="utf-8")  #百度爬取的字典
+    f=open("/Users/wcz/Downloads/CNtextAnalysis/DataMerge/CountryName_AllCHN.txt","r+",encoding="utf-8")  #百度爬取的字典
     for line in f:
         jieba.suggest_freq(line.rstrip("\n"), True)
     f.close()
@@ -67,10 +67,10 @@ if __name__ == "__main__":
     
     stopword_list = get_stopword_list(stopword_file)
     add_dict()
-    with open('/Users/wcz/Downloads/word2evc/TxTAlysis/ciku.txt', 'r', encoding='utf-8') as f:
+    with open('/Users/wcz/Downloads/CNtextAnalysis/DataMerge/CountryName_AllCHN.txt', 'r', encoding='utf-8') as f:
         keywords = [line.strip() for line in f]
     for file_path in files:
-        if os.path.basename(file_path) == '/Users/wcz/Downloads/word2evc/TxTAlysis/ciku.txt':  # Skip keywords.txt file
+        if os.path.basename(file_path) == '/Users/wcz/Downloads/CNtextAnalysis/DataMerge/CountryName_AllCHN.txt':  # Skip keywords.txt file
             continue
         lines = process_file(file_path, stopword_list)
         keyword_count = count_keyword_in_lines(lines, keywords)

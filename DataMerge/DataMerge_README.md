@@ -24,3 +24,17 @@
 
 example_debug.py
 
+------
+
+## 正式的文件
+
+ [example_debug_new.py](example_debug_new.py) ： 生成可用的县域和企业帮扶联系的面板的程序
+
+ [CountryName.csv](CountryName.csv) ， [CountryName_AllCHN.csv](CountryName_AllCHN.csv)  分别是西部6省县和全国县市的名单 对照于表1
+
+ [Industry.csv](Industry.csv)  是2021年底，4000多家上市公司的名单，包含所属行业的信息，对照于表2
+
+ [Country_Company_relationship.xlsx](Country_Company_relationship.xlsx)  是程序执行后，最终的面板文件，本文件以2021年为例。
+
+
+

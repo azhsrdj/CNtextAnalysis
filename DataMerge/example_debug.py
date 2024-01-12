@@ -6,9 +6,10 @@ Created on Mon Jan  8 21:41:30 2024
 @author: wcz
 """
 
-import numpy as np
 import pandas as pd
-from numpy import *
+import os 
+import re
+
 #%% 读取表格
 df2 = pd.read_csv('/Users/wcz/Downloads/表2.csv')
 df_tableX1old = pd.read_csv('/Users/wcz/Downloads/表X1_old.csv')
@@ -51,3 +52,13 @@ df1 = pd.concat([df1,temp],axis=0)
 df1.sort_index(inplace=True)
 
 # 用一个特殊技巧合并
+#%%
+
+
+# Full path string
+full_path = "/Users/wcz/Downloads/C2021txt/000002.SZ-万科A-万科A：2021年年度报告-20220331.csv"
+
+# Extract the file name
+file_name = os.path.basename(full_path)
+
+print(file_name)
